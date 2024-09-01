@@ -52,8 +52,10 @@ class BookViewModel extends ChangeNotifier {
       limit: limit
     );
 
+    
+
     if(response.statusCode == 200) {
-      final data = jsonDecode(response.body);
+      final data = jsonDecode(jsonDecode(response.body)["contents"]);
       books = (data["docs"] as List).map((e) => BookModel.fromJson(e)).toList();
       
       if(searchController.text.isEmpty) {
@@ -85,10 +87,10 @@ class BookViewModel extends ChangeNotifier {
       limit: limit
     );
 
+
     if(response.statusCode == 200) {
-      final data = jsonDecode(response.body);
+      final data = jsonDecode(jsonDecode(response.body)["contents"]);
       books = books + (data["docs"] as List).map((e) => BookModel.fromJson(e)).toList();
-      
       if(searchController.text.isEmpty) {
         status = StatusBookViewModel.idle;
         total = null;

@@ -33,7 +33,7 @@ class ApiBooks {
       default: typeSearch = "q";
     }
 
-    final url = '$urlApiBooks/search.json?$typeSearch=$search&fields=${fields.join(",")}&offset=$offset&limit=$limit';
+    final url = '${urlApiBooks}search.json?$typeSearch=$search&fields=${fields.join(",")}&offset=$offset&limit=$limit';
 
     return get(Uri.parse(url));
   }

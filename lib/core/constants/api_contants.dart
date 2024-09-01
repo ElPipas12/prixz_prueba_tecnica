@@ -1,1 +1,1 @@
-const urlApiBooks = "https://openlibrary.org/";
+const urlApiBooks = "https://api.allorigins.win/get?url=https://openlibrary.org/";

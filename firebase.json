@@ -1,11 +1,11 @@
 {
   "hosting": {
     "headers": [
-      { 
-        "source":"/service-worker.js", 
+      {
+        "source": "/service-worker.js",
         "headers": [
           {
-            "key": "Cache-Control", 
+            "key": "Cache-Control",
             "value": "1800"
           }
         ]
